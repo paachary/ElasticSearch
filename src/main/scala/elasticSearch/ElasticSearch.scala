@@ -1,12 +1,13 @@
 package elasticSearch
 import java.util.{Arrays, Properties}
 
-import scala.collection.JavaConverters._
 import com.sksamuel.elastic4s.http.JavaClient
 import com.sksamuel.elastic4s.requests.common.RefreshPolicy
 import com.sksamuel.elastic4s.requests.mappings.MappingDefinition
 import com.sksamuel.elastic4s.{ElasticClient, ElasticProperties}
-import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, KafkaConsumer}
+import org.apache.kafka.clients.consumer.{ConsumerConfig, KafkaConsumer}
+
+import scala.collection.JavaConverters._
 
 class ElasticSearch {
 
@@ -20,7 +21,7 @@ class ElasticSearch {
                                  screenName : String,
                                  text: String,
                                  client : ElasticClient,
-                                 esIndex: String) = {
+                                 esIndex: String): Unit = {
 
     println("inside populateElasticSearchIndex")
     import com.sksamuel.elastic4s.ElasticDsl._
