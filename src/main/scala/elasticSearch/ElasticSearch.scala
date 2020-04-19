@@ -25,7 +25,8 @@ class ElasticSearch {
     println("inside populateElasticSearchIndex")
     import com.sksamuel.elastic4s.ElasticDsl._
     client.execute{
-      indexInto(esIndex).fields("id" -> id,
+      indexInto(esIndex).fields("_id" -> id,
+        "id" -> id,
         "createdAt" -> createdAt,
         "screenName" -> screenName,
         "text" -> text).
