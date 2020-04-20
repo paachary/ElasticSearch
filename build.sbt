@@ -1,4 +1,4 @@
-name := "ElasticSearch"
+name := "ElasticSearchSimpleProcessing"
 
 version := "0.1"
 
